@@ -1,0 +1,7 @@
+{
+  "name": "mantenimiento-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
