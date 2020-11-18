@@ -10,11 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    this.sideMenu();
     this.initializeApp();
   }
 
@@ -24,4 +26,22 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  sideMenu() {
+    this.navigate =
+      [
+        {
+          title: "Acerca de",
+          url: "/about",
+          icon: "home"
+        },
+        {
+          title: "Nueva Orden",
+          url: "/insert-orden",
+          icon: "home"
+        },
+      ]
+  }
 }
+
+
