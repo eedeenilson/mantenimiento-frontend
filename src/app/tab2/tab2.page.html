@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Recurso humano </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" (click)="nuevoRecurso()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let item of recursoHumano">
+    <ion-card-header>
+      <ion-card-title> {{item.observaciones}} </ion-card-title>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-card-content>
+      <ion-text color="dark">
+        Apellido: {{item.apellido}} <br />
+        Nombre: {{item.nombre}} <br />
+        Contacto: {{item.telefono}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
