@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  proveedores
+  constructor(
+    private http: HttpClient,
+    private navController: NavController
+  ) {
+    this.http.get(`${environment.urlApi}/proveedores`, {
+    }).subscribe(
+      data => {
+        this.proveedores = data;
+        console.log(this.proveedores);
 
-  constructor() {}
+      },
+      error => {
+        console.log("Error al ejecutar http get");
+      }
+    );
+  }
+  nuevoProveedor() {
+    this.navController.navigateForward(['/insert-proveedor']);
+  }
 
 }

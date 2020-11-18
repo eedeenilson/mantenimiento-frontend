@@ -1,17 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title> Proveedores </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" (click)="nuevoProveedor()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let item of proveedores">
+    <ion-card-header>
+      <ion-card-title> {{item.proveedor}} </ion-card-title>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card-content>
+      <ion-text color="dark">
+        Contacto: {{item.telefono}} <br />
+        Direccion: {{item.direccion}} <br />
+        Observaciones: {{item.observaciones}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
