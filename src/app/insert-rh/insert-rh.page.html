@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nuevo recurso</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="rhForm" (ngSubmit)="registrar()">
+    <div class="contenedor">
+      <div class="divider"></div>
+      <ion-list class="line-input center contenedor">
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person-outline"></ion-icon>
+                Nombre
+              </ion-label>
+              <ion-input
+                class="ion-text-right"
+                formControlName="txtNombre"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person-outline"></ion-icon> Apellido
+              </ion-label>
+              <ion-input
+                class="ion-text-right"
+                formControlName="txtApellido"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="call-outline"></ion-icon> Telefono
+              </ion-label>
+              <ion-input
+                class="ion-text-right"
+                formControlName="txtTelefono"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="pencil-outline"></ion-icon> Ocupacion
+              </ion-label>
+              <ion-input
+                class="ion-text-right"
+                type="text"
+                formControlName="txtObservaciones"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons">
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="block"
+              class="boton"
+              (click)="limpiar()"
+              >Limpiar
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="full"
+              class="boton2"
+              (click)="registrar()"
+              >Registrar</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </div>
+  </form>
+</ion-content>
