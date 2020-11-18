@@ -1,0 +1,64 @@
+:root {
+  --color-barra: #2074bc;
+  --letra-barra: #ffcc00;
+  --fondo-item: #ffffff;
+  --fondo-car: #ffffff;
+  --color-principal: #8ca6bd;
+  --color-secundario: #6eec83;
+}
+
+.line-input {
+  margin-bottom: 0 !important;
+  ion-item {
+    --background-color: green($color: #000000);
+    --border-color: transparent !important;
+    --highlight-height: 0;
+    border: 2px solid #cecece;
+    border-radius: 40px;
+    &.item-has-focus {
+      border: 3px solid #3399cc;
+    }
+    ion-label {
+      color: #807e7e !important;
+      font-weight: 300;
+      font-size: 1rem !important;
+    }
+  }
+}
+
+.contenedor {
+  position: relative;
+  /*
+    background: -webkit-linear-gradient(-135deg, #3399cc, #ffcc00);
+    background: -o-linear-gradient(-135deg, #3399cc, #ffcc00);
+    background: -moz-linear-gradient(-135deg, #3399cc, #ffcc00);
+    background: linear-gradient(-135deg, #3399cc, #ffcc00);  
+    */
+  width: 100%;
+  height: 100%;
+}
+
+ion-icon {
+  color: #ffcc00;
+}
+
+ion-item {
+  width: 80%;
+  margin: auto;
+}
+
+.buttons {
+  width: 80%;
+  margin: auto;
+}
+
+.boton {
+  --background: var(--color-principal);
+  --color: white;
+  --background-activated: var(--color-secundario);
+}
+.boton2 {
+  --background: var(--color-secundario);
+  --color: white;
+  --background-activated: #3399cc;
+}
