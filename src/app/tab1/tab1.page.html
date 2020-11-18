@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> Inventario </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" (click)="nuevoEquipo()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let item of equipo">
+    <ion-card-header>
+      <ion-card-title> {{item.equipo}} </ion-card-title>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-card-content>
+      <ion-text color="dark">
+        Codigo: {{item.idEquipo}} <br />
+        Cantidad: {{item.cantidad}} <br />
+        Descipcion: {{item.descripcion}} <br />
+        Observaciones: {{item.observaciones}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
