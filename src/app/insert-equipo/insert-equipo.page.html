@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nuevo equipo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="equipoForm" (ngSubmit)="registrar()">
+    <div class="">
+      <div class="divider"></div>
+      <ion-list class="line-input center contenedor">
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="build-outline"></ion-icon>
+                Nombre
+              </ion-label>
+              <ion-input
+                class="ion-text-right"
+                formControlName="txtEquipo"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="alert-circle-outline"></ion-icon> Cantidad
+              </ion-label>
+              <ion-input
+                type="number"
+                min="0"
+                max="25"
+                class="ion-text-right"
+                formControlName="txtCantidad"
+              ></ion-input>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="alert-circle-outline"></ion-icon> Descripcion
+              </ion-label>
+              <ion-textarea
+                rows="10"
+                class="ion-text-right"
+                formControlName="txtDescripcion"
+              ></ion-textarea>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="pencil-outline"></ion-icon> Observaciones
+              </ion-label>
+              <ion-textarea
+                rows="5"
+                class="ion-text-right"
+                type="text"
+                formControlName="txtObservaciones"
+              ></ion-textarea>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons">
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="block"
+              class="boton"
+              (click)="limpiar()"
+              >Limpiar
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="full"
+              class="boton2"
+              (click)="registrar()"
+              >Registrar</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </div>
+  </form>
+</ion-content>
