@@ -19,7 +19,7 @@ export class Tab1Page {
     }).subscribe(
       data => {
         this.equipo = data;
-        console.log(this.equipo);
+        this.equipo.reverse();
       },
       error => {
         console.log("Error al ejecutar http get");
@@ -28,7 +28,7 @@ export class Tab1Page {
   }
 
   nuevoEquipo() {
-    this.navController.navigateForward(['/insert-equipo']);
+    this.navController.navigateRoot(['/insert-equipo']);
   }
 
 }

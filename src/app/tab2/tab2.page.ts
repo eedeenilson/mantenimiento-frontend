@@ -19,6 +19,7 @@ export class Tab2Page {
     }).subscribe(
       data => {
         this.recursoHumano = data;
+        this.recursoHumano.reverse();
         console.log(this.recursoHumano);
 
       },
@@ -29,7 +30,7 @@ export class Tab2Page {
   }
 
   nuevoRecurso() {
-    this.navController.navigateForward(['/insert-rh']);
+    this.navController.navigateRoot(['/insert-rh']);
   }
 
 }

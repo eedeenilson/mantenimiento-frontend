@@ -18,6 +18,7 @@ export class Tab3Page {
     }).subscribe(
       data => {
         this.proveedores = data;
+        this.proveedores.reverse();
         console.log(this.proveedores);
 
       },
@@ -27,7 +28,7 @@ export class Tab3Page {
     );
   }
   nuevoProveedor() {
-    this.navController.navigateForward(['/insert-proveedor']);
+    this.navController.navigateRoot(['/insert-proveedor']);
   }
 
 }
