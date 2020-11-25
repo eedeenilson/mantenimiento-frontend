@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'insert-orden',
     loadChildren: () => import('./insert-orden/insert-orden.module').then( m => m.InsertOrdenPageModule)
+  },
+  {
+    path: 'ordentrabajo',
+    loadChildren: () => import('./ordentrabajo/ordentrabajo.module').then( m => m.OrdentrabajoPageModule)
   }
 ];
 @NgModule({
