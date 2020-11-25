@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-insert-rh',
@@ -13,7 +14,9 @@ export class InsertRHPage implements OnInit {
   rhForm: FormGroup;
   constructor(
     private http: HttpClient,
-    fb: FormBuilder
+    fb: FormBuilder,
+    public navController: NavController,
+    public toastController: ToastController
   ) {
     this.rhForm = fb.group({
       'txtNombre': [null, Validators.required],
@@ -44,7 +47,9 @@ export class InsertRHPage implements OnInit {
       }).subscribe(
         data => {
           console.log("Se ha insertado");
+          this.showToast();
           this.rhForm.reset();
+          this.navController.navigateRoot(['/tabs/tab2']);
         },
         error => {
           console.log("Error al ejecutar http get");
@@ -54,6 +59,29 @@ export class InsertRHPage implements OnInit {
   }
 
   limpiar() {
-    this.rhForm.reset();
+    this.navController.navigateRoot(['/tabs/tab2']);
+  }
+
+  showToast() {
+    this.toastController.create({
+      color: 'success',
+      duration: 2000,
+      header: 'Agregado',
+      message: 'Nuevo recurso humano agregado',
+      position: 'middle',
+      cssClass: 'my-custom-class',
+      buttons: [
+        {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('Alerta cerrada');
+          }
+        }
+      ]
+    }).then((obj) => {
+      obj.present();
+    });
   }
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NavController, ToastController } from '@ionic/angular';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -12,7 +13,9 @@ export class InsertEquipoPage implements OnInit {
   equipoForm: FormGroup;
   constructor(
     private http: HttpClient,
-    fb: FormBuilder) {
+    fb: FormBuilder,
+    public navController: NavController,
+    public toastController: ToastController) {
     this.equipoForm = fb.group({
       'txtEquipo': [null, Validators.required],
       'txtCantidad': [null, Validators.required],
@@ -25,7 +28,6 @@ export class InsertEquipoPage implements OnInit {
   }
 
   registrar() {
-
     let value = this.equipoForm.value;
     for (let c in this.equipoForm.controls) {
       this.equipoForm.controls[c].markAsTouched();
@@ -42,7 +44,9 @@ export class InsertEquipoPage implements OnInit {
       }).subscribe(
         data => {
           console.log("Se ha insertado");
+          this.showToast()
           this.equipoForm.reset();
+          this.navController.navigateRoot(['/tabs/tab1'])
         },
         error => {
           console.log("Error al ejecutar http get");
@@ -52,7 +56,31 @@ export class InsertEquipoPage implements OnInit {
   }
 
   limpiar() {
-    this.equipoForm.reset();
+    this.navController.navigateRoot(['/tabs/tab1'])
   }
+
+  showToast() {
+    this.toastController.create({
+      color: 'success',
+      duration: 2000,
+      header: 'Agregado',
+      message: 'Nuevo equipo agregado',
+      position: 'middle',
+      cssClass: 'my-custom-class',
+      buttons: [
+        {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('Alerta cerrada');
+          }
+        }
+      ]
+    }).then((obj) => {
+      obj.present();
+    });
+  }
+
 
 }

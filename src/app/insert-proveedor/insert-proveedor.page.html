@@ -50,8 +50,11 @@
               </ion-label>
               <ion-input
                 type="tel"
+                required
+                mask="00000000"
                 class="ion-text-right"
                 formControlName="txtTelefono"
+                required
               ></ion-input>
             </ion-item>
             <div class="divider"></div>
@@ -80,7 +83,7 @@
               expand="block"
               class="boton"
               (click)="limpiar()"
-              >Limpiar
+              >Cancelar
             </ion-button>
           </ion-col>
           <ion-col size="6">

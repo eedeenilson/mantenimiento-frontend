@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { environment } from '../../environments/environment';
+
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-insert-proveedor',
@@ -12,7 +15,9 @@ export class InsertProveedorPage implements OnInit {
   proveedorForm: FormGroup;
   constructor(
     private http: HttpClient,
-    fb: FormBuilder
+    fb: FormBuilder,
+    public navController: NavController,
+    public toastController: ToastController
   ) {
     this.proveedorForm = fb.group({
       'txtProveedor': [null, Validators.required],
@@ -41,7 +46,9 @@ export class InsertProveedorPage implements OnInit {
       }).subscribe(
         data => {
           console.log("Se ha insertado");
+          this.showToast();
           this.proveedorForm.reset();
+          this.navController.navigateRoot(['/tabs/tab3']);
         },
         error => {
           console.log("Error al ejecutar http get");
@@ -51,7 +58,30 @@ export class InsertProveedorPage implements OnInit {
   }
 
   limpiar() {
-    this.proveedorForm.reset();
+    this.navController.navigateRoot(['/tabs/tab3']);
+  }
+
+  showToast() {
+    this.toastController.create({
+      color: 'success',
+      duration: 2000,
+      header: 'Agregado',
+      message: 'Nuevo proveedor agregado',
+      position: 'middle',
+      cssClass: 'my-custom-class',
+      buttons: [
+        {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('Alerta cerrada');
+          }
+        }
+      ]
+    }).then((obj) => {
+      obj.present();
+    });
   }
 
 }
