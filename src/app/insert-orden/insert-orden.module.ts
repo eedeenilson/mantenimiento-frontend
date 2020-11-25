@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +13,9 @@ import { InsertOrdenPage } from './insert-orden.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InsertOrdenPageRoutingModule
+    InsertOrdenPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [InsertOrdenPage]
 })
-export class InsertOrdenPageModule {}
+export class InsertOrdenPageModule { }

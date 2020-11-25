@@ -1,9 +1,106 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>insertOrden</ion-title>
+    <ion-title>Nueva orden</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="ordenForm" (ngSubmit)="registrar()">
+    <div class="">
+      <div class="divider"></div>
+      <ion-list class="line-input center contenedor">
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="build-outline"></ion-icon>
+                Mantenimiento
+              </ion-label>
+              <ion-select
+                class="ion-text-right"
+                formControlName="cmbMantenimiento"
+              >
+                <ion-select-option value="1">Preventivo</ion-select-option>
+                <ion-select-option value="2">Correctivo</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="folder-outline"></ion-icon> Equipo
+              </ion-label>
+              <ion-select class="ion-text-right" formControlName="cmbEquipo">
+                <ion-select-option
+                  *ngFor="let item of equipo"
+                  [value]="item.idEquipo"
+                  >{{item.equipo}} - {{item.idEquipo}}</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person-outline"></ion-icon> Recurso humano
+              </ion-label>
+              <ion-select class="ion-text-right" formControlName="cmbRecurso">
+                <ion-select-option
+                  *ngFor="let item of recursoHumano"
+                  [value]="item.idRecursoHumano"
+                  >{{item.apellido}} {{item.nombre}}</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>
+                <ion-icon name="pencil-outline"></ion-icon> Observaciones
+              </ion-label>
+              <ion-textarea
+                rows="5"
+                class="ion-text-right"
+                type="text"
+                formControlName="txtObservaciones"
+              ></ion-textarea>
+            </ion-item>
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons">
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="block"
+              class="boton"
+              (click)="limpiar()"
+              >Limpiar
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button
+              shape="round"
+              expand="full"
+              class="boton2"
+              (click)="registrar()"
+              >Registrar</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </div>
+  </form>
 </ion-content>
