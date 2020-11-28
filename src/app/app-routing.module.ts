@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'edit-orden',
     loadChildren: () => import('./edit-orden/edit-orden.module').then( m => m.EditOrdenPageModule)
+  },
+  {
+    path: 'ordentrabajo-inactivas',
+    loadChildren: () => import('./ordentrabajo-inactivas/ordentrabajo-inactivas.module').then( m => m.OrdentrabajoInactivasPageModule)
   }
 ];
 @NgModule({
