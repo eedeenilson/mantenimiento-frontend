@@ -37,6 +37,14 @@ const routes: Routes = [
   {
     path: 'ordentrabajo-inactivas',
     loadChildren: () => import('./ordentrabajo-inactivas/ordentrabajo-inactivas.module').then( m => m.OrdentrabajoInactivasPageModule)
+  },
+  {
+    path: 'ordencompra',
+    loadChildren: () => import('./ordencompra/ordencompra.module').then( m => m.OrdencompraPageModule)
+  },
+  {
+    path: 'insert-compra',
+    loadChildren: () => import('./insert-compra/insert-compra.module').then( m => m.InsertCompraPageModule)
   }
 ];
 @NgModule({
