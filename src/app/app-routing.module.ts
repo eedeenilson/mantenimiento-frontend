@@ -45,6 +45,14 @@ const routes: Routes = [
   {
     path: 'insert-compra',
     loadChildren: () => import('./insert-compra/insert-compra.module').then( m => m.InsertCompraPageModule)
+  },
+  {
+    path: 'procedimiento',
+    loadChildren: () => import('./procedimiento/procedimiento.module').then( m => m.ProcedimientoPageModule)
+  },
+  {
+    path: 'insert-procedimiento',
+    loadChildren: () => import('./insert-procedimiento/insert-procedimiento.module').then( m => m.InsertProcedimientoPageModule)
   }
 ];
 @NgModule({
