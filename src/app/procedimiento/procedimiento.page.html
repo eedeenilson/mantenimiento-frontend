@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>procedimiento</ion-title>
+    <ion-title>Procedimiento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" (click)="nuevoProcedimiento()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card *ngFor="let item of procedimiento">
+    <ion-card-header>
+      <ion-card-title> {{item.procedimiento}} </ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+      <ion-text color="dark">
+        Codigo: {{item.idProcedimiento}} <br />
+        Descipcion: {{item.descripcion}} <br />
+        Observaciones: {{item.observaciones}}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
