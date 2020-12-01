@@ -31,15 +31,31 @@ export class AppComponent {
     this.navigate =
       [
         {
-          title: "Acerca de",
-          url: "/about",
-          icon: "home"
+          title: "Inicio",
+          url: "/tabs/tab1",
+          icon: "home-outline"
         },
         {
           title: "Nueva Orden",
           url: "/insert-orden",
-          icon: "home"
+          icon: "reader-outline"
         },
+        {
+          title: "Ordenes Activas",
+          url: "/ordentrabajo",
+          icon: "hammer-outline"
+        },
+        {
+          title: "Ordenes Inacivas",
+          url: "/ordentrabajo-inactivas",
+          icon: "checkmark-circle-outline"
+        },
+        {
+          title: "Acerca de",
+          url: "/about",
+          icon: "help-circle-outline"
+        },
+
       ]
   }
 }
