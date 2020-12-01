@@ -1,9 +1,136 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-orden</ion-title>
+    <ion-title>Editar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="">
+    <div class="divider"></div>
+    <ion-list class="line-input center contenedor">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="build-outline"></ion-icon>
+              Mantenimiento
+            </ion-label>
+            <ion-input
+              [ngModel]="mantenimiento"
+              type="text"
+              class="ion-text-right"
+              disabled="true"
+            >
+            </ion-input>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="folder-outline"></ion-icon> Equipo
+            </ion-label>
+            <ion-input
+              [ngModel]="equipo"
+              class="ion-text-right"
+              type="text"
+              disabled="true"
+            >
+            </ion-input>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="person-outline"></ion-icon> Recurso humano
+            </ion-label>
+            <ion-input
+              [ngModel]="recursoHumano"
+              class="ion-text-right"
+              type="text"
+              disabled="true"
+            >
+            </ion-input>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="pencil-outline"></ion-icon> Falla reportada
+            </ion-label>
+            <ion-textarea
+              [ngModel]="falla"
+              disabled="true"
+              rows="5"
+              class="ion-text-right"
+              type="text"
+            ></ion-textarea>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="folder-outline"></ion-icon> Procedimiento
+            </ion-label>
+            <ion-select class="ion-text-right" [(ngModel)]="proceso">
+              <ion-select-option
+                *ngFor="let item of procedimientos"
+                [value]="item.idProcedimiento"
+                >{{item.procedimiento}} -
+                {{item.idProcedimiento}}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              <ion-icon name="pencil-outline"></ion-icon> Observaciones
+            </ion-label>
+            <ion-textarea
+              [(ngModel)]="observaciones"
+              rows="5"
+              class="ion-text-right"
+              type="text"
+            ></ion-textarea>
+          </ion-item>
+          <div class="divider"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="buttons">
+        <ion-col size="6">
+          <ion-button
+            shape="round"
+            expand="block"
+            class="boton"
+            (click)="limpiar()"
+            >Cancelar
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button
+            shape="round"
+            expand="full"
+            class="boton2"
+            (click)="editar()"
+            >Registrar</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
 </ion-content>
