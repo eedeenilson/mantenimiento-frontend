@@ -35,7 +35,7 @@ export class InsertOrdenPage implements OnInit {
 
   registrar() {
 
-    console.log(this.ordenForm.value);
+    //console.log(this.ordenForm.value);
 
     let value = this.ordenForm.value;
     for (let c in this.ordenForm.controls) {
@@ -43,25 +43,31 @@ export class InsertOrdenPage implements OnInit {
     }
 
     if (this.ordenForm.valid) {
-      this.http.post(`${environment.urlApi}/ordentrabajo`, {
-        fechaGeneracion: moment().format(),
-        idEquipo: {
-          idEquipo: value.cmbEquipo
+      let orden = {
+        "fechaGeneracion": moment().format(),
+        "fechaActualizacion": moment().format(),
+        "idEquipo": {
+          "idEquipo": value.cmbEquipo
         },
-        idEstado: {
-          idEstado: 1
+        "idEstado": {
+          "idEstado": 1
         },
-        idProcedimiento: {
-          idProcedimiento: 1
+        "idProcedimiento": {
+          "idProcedimiento": 4
         },
-        idRecursoHumano: {
-          idRecursoHumano: value.cmbRecurso
+        "idRecursoHumano": {
+          "idRecursoHumano": value.cmbRecurso
         },
-        idTipoMantenimiento: {
-          idTipoMantenimiento: value.cmbMantenimiento
+        "idTipoMantenimiento": {
+          "idTipoMantenimiento": value.cmbMantenimiento
         },
-        observaciones: value.txtObservaciones
-      }).subscribe(
+        "observaciones": value.txtObservaciones
+      }
+
+      console.log(orden);
+
+
+      this.http.post(`${environment.urlApi}/ordentrabajo`, orden).subscribe(
         data => {
           console.log("Se ha insertado");
           this.showToast();
