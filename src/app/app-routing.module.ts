@@ -32,27 +32,23 @@ const routes: Routes = [
   },
   {
     path: 'edit-orden',
-    loadChildren: () => import('./edit-orden/edit-orden.module').then( m => m.EditOrdenPageModule)
+    loadChildren: () => import('./edit-orden/edit-orden.module').then(m => m.EditOrdenPageModule)
   },
   {
     path: 'ordentrabajo-inactivas',
-    loadChildren: () => import('./ordentrabajo-inactivas/ordentrabajo-inactivas.module').then( m => m.OrdentrabajoInactivasPageModule)
+    loadChildren: () => import('./ordentrabajo-inactivas/ordentrabajo-inactivas.module').then(m => m.OrdentrabajoInactivasPageModule)
   },
   {
     path: 'ordencompra',
-    loadChildren: () => import('./ordencompra/ordencompra.module').then( m => m.OrdencompraPageModule)
+    loadChildren: () => import('./ordencompra/ordencompra.module').then(m => m.OrdencompraPageModule)
   },
   {
     path: 'insert-compra',
-    loadChildren: () => import('./insert-compra/insert-compra.module').then( m => m.InsertCompraPageModule)
-  },
-  {
-    path: 'procedimiento',
-    loadChildren: () => import('./procedimiento/procedimiento.module').then( m => m.ProcedimientoPageModule)
+    loadChildren: () => import('./insert-compra/insert-compra.module').then(m => m.InsertCompraPageModule)
   },
   {
     path: 'insert-procedimiento',
-    loadChildren: () => import('./insert-procedimiento/insert-procedimiento.module').then( m => m.InsertProcedimientoPageModule)
+    loadChildren: () => import('./insert-procedimiento/insert-procedimiento.module').then(m => m.InsertProcedimientoPageModule)
   }
 ];
 @NgModule({
