@@ -46,7 +46,7 @@ export class AppComponent {
           icon: "hammer-outline"
         },
         {
-          title: "Ordenes Inacivas",
+          title: "Ordenes Inactivas",
           url: "/ordentrabajo-inactivas",
           icon: "checkmark-circle-outline"
         },

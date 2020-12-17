@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Inactivas</ion-title>
+    <ion-title class="ion-text-uppercase ion-text-center color">Inactivas</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -10,9 +10,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div *ngFor="let item of ordenTrabajo">
-    <ion-card *ngIf="item.idEstado.idEstado==2">
+    <ion-card *ngIf="item.idEstado.idEstado==2" class="color">
       <ion-card-header>
         <ion-card-title> No. orden: {{item.idOrdenTrabajo}} </ion-card-title>
       </ion-card-header>

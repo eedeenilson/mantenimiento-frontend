@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Activas</ion-title>
+    <ion-title class="ion-text-uppercase ion-text-center color">Activas</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,12 +11,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div *ngFor="let item of ordenTrabajo">
-    <ion-card *ngIf="item.idEstado.idEstado==1">
+    <ion-card *ngIf="item.idEstado.idEstado==1" class="color">
       <ion-card-header>
-        <ion-toolbar>
-          <ion-card-title> No. orden: {{item.idOrdenTrabajo}} </ion-card-title>
+          <ion-card-title class="color"> No. orden: {{item.idOrdenTrabajo}} </ion-card-title>
           <ion-buttons slot="end">
             <ion-button
               color="success"
@@ -25,11 +24,10 @@
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
-        </ion-toolbar>
       </ion-card-header>
 
       <ion-card-content>
-        <ion-text color="dark">
+        <ion-text color="dark letra">
           Equipo: {{item.idEquipo.equipo}} {{item.idEquipo.descripcion}} <br />
           Cod Equipo: {{item.idEquipo.idEquipo}} <br />
           Creada: {{ item.fechaGeneracion | date: 'medium'}} <br />

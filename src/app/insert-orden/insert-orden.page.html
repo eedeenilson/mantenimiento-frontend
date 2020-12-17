@@ -1,6 +1,6 @@
-<ion-header>
+<ion-header class="color">
   <ion-toolbar>
-    <ion-title>Nueva orden</ion-title>
+    <ion-title class="ion-text-uppercase ion-text-center">Nueva orden</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,13 +11,12 @@
   <form [formGroup]="ordenForm" (ngSubmit)="registrar()">
     <div class="">
       <div class="divider"></div>
-      <ion-list class="line-input center contenedor">
+      <ion-list class="line-input center contenedor colorX">
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="build-outline"></ion-icon>
-                Mantenimiento
+              <ion-label class="letra">
+                <ion-icon name="build-outline"></ion-icon>Mantenimiento
               </ion-label>
               <ion-select
                 class="ion-text-right"
@@ -33,8 +32,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="folder-outline"></ion-icon> Equipo
+              <ion-label class="letra">
+                <ion-icon name="folder-outline"></ion-icon>Equipo
               </ion-label>
               <ion-select class="ion-text-right" formControlName="cmbEquipo">
                 <ion-select-option
@@ -50,8 +49,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="person-outline"></ion-icon> Recurso humano
+              <ion-label class="letra">
+                <ion-icon name="person-outline"></ion-icon>Recurso humano
               </ion-label>
               <ion-select class="ion-text-right" formControlName="cmbRecurso">
                 <ion-select-option
@@ -67,8 +66,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="pencil-outline"></ion-icon> Observaciones
+              <ion-label class="letra">
+                <ion-icon name="pencil-outline"></ion-icon>Observaciones
               </ion-label>
               <ion-textarea
                 rows="5"

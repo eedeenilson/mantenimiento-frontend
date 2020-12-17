@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from '../../environments/environment';
 
 import * as moment from 'moment';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-insert-orden',
@@ -18,7 +18,8 @@ export class InsertOrdenPage implements OnInit {
   constructor(
     private http: HttpClient,
     fb: FormBuilder,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public navController : NavController
   ) {
     this.ordenForm = fb.group({
       'cmbMantenimiento': [null, Validators.required],
@@ -71,7 +72,7 @@ export class InsertOrdenPage implements OnInit {
         data => {
           console.log("Se ha insertado");
           this.showToast();
-          this.ordenForm.reset();
+          this.limpiar();
         },
         error => {
           console.log("Error al ejecutar http post");
@@ -81,7 +82,8 @@ export class InsertOrdenPage implements OnInit {
   }
 
   limpiar() {
-    this.ordenForm.reset();
+    //this.ordenForm.reset();
+    this.navController.navigateRoot(['/ordentrabajo']);
   }
 
   getEquipo() {

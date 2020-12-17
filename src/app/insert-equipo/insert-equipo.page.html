@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Nuevo equipo</ion-title>
+    <ion-title class="color">Nuevo equipo</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -9,15 +9,14 @@
 
 <ion-content>
   <form [formGroup]="equipoForm" (ngSubmit)="registrar()">
-    <div class="">
+    <div>
       <div class="divider"></div>
-      <ion-list class="line-input center contenedor">
+      <ion-list class="line-input center contenedor color2">
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="build-outline"></ion-icon>
-                Nombre
+              <ion-label class="letra">
+                <ion-icon name="build-outline"></ion-icon>Nombre:
               </ion-label>
               <ion-input
                 class="ion-text-right"
@@ -30,8 +29,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="alert-circle-outline"></ion-icon> Cantidad
+              <ion-label class="letra">
+                <ion-icon name="alert-circle-outline"></ion-icon>Cantidad:
               </ion-label>
               <ion-input
                 type="number"
@@ -47,8 +46,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="alert-circle-outline"></ion-icon> Descripcion
+              <ion-label class="letra">
+                <ion-icon name="alert-circle-outline"></ion-icon>Descripcion:
               </ion-label>
               <ion-textarea
                 rows="10"
@@ -62,8 +61,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="pencil-outline"></ion-icon> Observaciones
+              <ion-label class="letra">
+                <ion-icon name="pencil-outline"></ion-icon>Observaciones:
               </ion-label>
               <ion-textarea
                 rows="5"

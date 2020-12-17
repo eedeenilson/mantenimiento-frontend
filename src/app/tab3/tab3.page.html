@@ -1,19 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Proveedores </ion-title>
+  <ion-toolbar class="color">
+    <ion-title class="ion-text-center ion-text-uppercase color tamanoInv"> Proveedores </ion-title>
     <ion-buttons slot="end">
       <ion-button color="success" (click)="nuevoProveedor()">
-        <ion-icon name="add-outline"></ion-icon>
+        <ion-icon name="add-outline" class="iconM"></ion-icon>
       </ion-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button class="menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let item of proveedores">
+  <ion-card *ngFor="let item of proveedores" class="color">
     <ion-card-header>
-      <ion-card-title> {{item.proveedor}} </ion-card-title>
+      <ion-card-title class="ion-text-uppercase"> {{item.proveedor}} </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>

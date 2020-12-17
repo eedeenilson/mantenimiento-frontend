@@ -1,23 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Inventario </ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="success" (click)="nuevoEquipo()">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-button>
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 
+
+  <ion-header [translucent]="true">
+
+    
+    <ion-toolbar class="color">
+        <ion-title class="ion-text-center ion-text-uppercase color tamanoInv"> Inventario </ion-title>     
+        <ion-buttons slot="end">
+          <ion-button color="sucess" (click)="nuevoEquipo()">
+            
+            <ion-icon name="add-outline"  class="iconM"></ion-icon>
+          </ion-button>
+          <ion-menu-button class="menu"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+  
+  
+  </ion-header>
+  
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let item of equipo">
+  <ion-card *ngFor="let item of equipo" class="color">
     <ion-card-header>
-      <ion-card-title> {{item.equipo}} </ion-card-title>
+      <ion-card-title class="ion-text-uppercase"> {{item.equipo}} </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-text color="dark">
+      <ion-text>
         Codigo: {{item.idEquipo}} <br />
         Cantidad: {{item.cantidad}} <br />
         Descipcion: {{item.descripcion}} <br />

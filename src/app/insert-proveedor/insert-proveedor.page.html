@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Nuevo proveedor</ion-title>
+    <ion-title class="color">Nuevo proveedor</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,13 +11,12 @@
   <form [formGroup]="proveedorForm" (ngSubmit)="registrar()">
     <div class="">
       <div class="divider"></div>
-      <ion-list class="line-input center contenedor">
+      <ion-list class="line-input center contenedor color2">
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="build-outline"></ion-icon>
-                Proveedor
+              <ion-label class="letra">
+                <ion-icon name="build-outline"></ion-icon>Proveedor
               </ion-label>
               <ion-input
                 class="ion-text-right"
@@ -30,8 +29,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="location-outline"></ion-icon> Direccion
+              <ion-label class="letra">
+                <ion-icon name="location-outline"></ion-icon>Direccion
               </ion-label>
               <ion-textarea
                 rows="5"
@@ -45,8 +44,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="call-outline"></ion-icon> Telefono
+              <ion-label class="letra">
+                <ion-icon name="call-outline"></ion-icon>Telefono
               </ion-label>
               <ion-input
                 type="tel"
@@ -63,8 +62,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>
-                <ion-icon name="pencil-outline"></ion-icon> Observaciones
+              <ion-label class="letra">
+                <ion-icon name="pencil-outline"></ion-icon>Observaciones
               </ion-label>
               <ion-textarea
                 rows="5"
