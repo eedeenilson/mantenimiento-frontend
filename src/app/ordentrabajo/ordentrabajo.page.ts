@@ -44,6 +44,4 @@ export class OrdentrabajoPage implements OnInit {
   editOrden(id) {
     this.navController.navigateRoot(['/edit-orden/'], { queryParams: { id: id } });
   }
-
-
 }
